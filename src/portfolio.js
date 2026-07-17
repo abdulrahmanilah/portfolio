@@ -20,8 +20,8 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Abdulrahman Kamilu",
-  title: "Hi all, I'm Abdulrahman",
+  username: "Abdulrahman Ilah",
+  title: "Hi all, I'm Ilah",
   subTitle: emoji(
     "A multidisciplinary creative and software developer based in Kano, Nigeria. I uniquely combine design thinking, software engineering, and business insights to build premium solutions that are visually stunning, technically functional, and commercially effective. 🚀"
   ),
@@ -262,20 +262,6 @@ const bigProjects = {
       projectDesc:
         "Branding materials, print packaging layouts, and luxury aesthetic product positioning for a high-end consumer store.",
       techStack: ["Branding", "Product Styling", "Packaging Concepts"]
-    }
-  ],
-
-  businessProjects: [
-    {
-      projectName: "Snackville Nigeria",
-      projectDesc:
-        "Co-founded a packaged treats and catering business in Kano. Handled product positioning, social-media operations, premium packaging design, and event operations.",
-      techStack: [
-        "E-commerce",
-        "Operations",
-        "Product Positioning",
-        "Marketing"
-      ]
     }
   ],
 

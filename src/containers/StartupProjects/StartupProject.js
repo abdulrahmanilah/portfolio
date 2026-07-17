@@ -124,23 +124,6 @@ export default function StartupProject() {
               )}
             </div>
           </div>
-
-          {/* Brand & Business Projects */}
-          <div className="project-category-section">
-            <h2
-              className={
-                isDark ? "dark-mode category-heading" : "category-heading"
-              }
-            >
-              <i className="fas fa-briefcase icon-spacing"></i> Brand & Business
-              Projects
-            </h2>
-            <div className="projects-container">
-              {bigProjects.businessProjects.map((project, i) =>
-                renderProjectCard(project, i)
-              )}
-            </div>
-          </div>
         </div>
       </div>
     </Fade>
