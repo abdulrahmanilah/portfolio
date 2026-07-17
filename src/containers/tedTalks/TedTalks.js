@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Fade } from "react-reveal";
+import React, {useState, useEffect, useContext} from "react";
+import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
-import { tedTalksSection } from "../../portfolio";
+import {tedTalksSection} from "../../portfolio";
 import "./TedTalks.scss";
 
 export default function TedTalks() {
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
   const [watchedTalks, setWatchedTalks] = useState([]);
 
   useEffect(() => {
@@ -19,10 +19,10 @@ export default function TedTalks() {
     }
   }, []);
 
-  const toggleWatched = (id) => {
+  const toggleWatched = id => {
     let updated;
     if (watchedTalks.includes(id)) {
-      updated = watchedTalks.filter((item) => item !== id);
+      updated = watchedTalks.filter(item => item !== id);
     } else {
       updated = [...watchedTalks, id];
     }
@@ -34,35 +34,56 @@ export default function TedTalks() {
     return null;
   }
 
-  const { title, subtitle, talks } = tedTalksSection;
+  const {title, subtitle, talks} = tedTalksSection;
   const progressPercent = (watchedTalks.length / talks.length) * 100;
 
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="tedtalks">
         <div className="ted-header-div">
-          <h1 className={isDark ? "dark-mode-text ted-header-text" : "ted-header-text"}>
+          <h1
+            className={
+              isDark ? "dark-mode-text ted-header-text" : "ted-header-text"
+            }
+          >
             {title}
           </h1>
-          <p className={isDark ? "dark-mode-text subTitle ted-subtitle" : "subTitle ted-subtitle"}>
+          <p
+            className={
+              isDark
+                ? "dark-mode-text subTitle ted-subtitle"
+                : "subTitle ted-subtitle"
+            }
+          >
             {subtitle}
           </p>
         </div>
 
         {/* Progress Tracker Bar */}
-        <div className={isDark ? "ted-progress-container dark-mode-card" : "ted-progress-container"}>
+        <div
+          className={
+            isDark
+              ? "ted-progress-container dark-mode-card"
+              : "ted-progress-container"
+          }
+        >
           <div className="ted-progress-info">
-            <span>Progress: {watchedTalks.length} of {talks.length} Talks Explored</span>
+            <span>
+              Progress: {watchedTalks.length} of {talks.length} Talks Explored
+            </span>
             <span>{Math.round(progressPercent)}%</span>
           </div>
           <div className="ted-progress-bar-bg">
-            <div className="ted-progress-bar-fill" style={{ width: `${progressPercent}%` }}></div>
+            <div
+              className="ted-progress-bar-fill"
+              style={{width: `${progressPercent}%`}}
+            ></div>
           </div>
         </div>
 
         {/* Talks Grid */}
         <div className="ted-grid">
-          {talks.map((talk) => {
+          {talks.map(talk => {
             const isWatched = watchedTalks.includes(talk.id);
             return (
               <div

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Fade } from "react-reveal";
+import React, {useState, useEffect, useContext} from "react";
+import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
-import { policeGuideSection } from "../../portfolio";
+import {policeGuideSection} from "../../portfolio";
 import "./PoliceGuide.scss";
 
 export default function PoliceGuide() {
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
   const [selectedScenarioId, setSelectedScenarioId] = useState("");
   const [completedSteps, setCompletedSteps] = useState({});
   const [bookmarks, setBookmarks] = useState({});
@@ -49,15 +49,17 @@ export default function PoliceGuide() {
     return null;
   }
 
-  const { title, subtitle, scenarios } = policeGuideSection;
-  const currentScenario = scenarios.find((s) => s.id === selectedScenarioId) || scenarios[0];
+  const {title, subtitle, scenarios} = policeGuideSection;
+  const currentScenario =
+    scenarios.find(s => s.id === selectedScenarioId) || scenarios[0];
 
   if (!currentScenario) {
     return null;
   }
 
   const stepsCount = currentScenario.steps.length;
-  const currentStep = currentScenario.steps[activeStepIndex] || currentScenario.steps[0];
+  const currentStep =
+    currentScenario.steps[activeStepIndex] || currentScenario.steps[0];
 
   const handleNext = () => {
     if (activeStepIndex < stepsCount - 1) {
@@ -73,14 +75,14 @@ export default function PoliceGuide() {
 
   const toggleStepCompleted = (scenarioId, stepIndex) => {
     const key = `${scenarioId}-${stepIndex}`;
-    const updated = { ...completedSteps, [key]: !completedSteps[key] };
+    const updated = {...completedSteps, [key]: !completedSteps[key]};
     setCompletedSteps(updated);
     localStorage.setItem("policeCompletedSteps", JSON.stringify(updated));
   };
 
   const toggleBookmark = (scenarioId, stepIndex) => {
     const isBookmarked = bookmarks[scenarioId] === stepIndex;
-    const updated = { ...bookmarks };
+    const updated = {...bookmarks};
     if (isBookmarked) {
       delete updated[scenarioId];
     } else {
@@ -91,7 +93,7 @@ export default function PoliceGuide() {
   };
 
   // Calculate scenario progress
-  const getScenarioProgress = (scenario) => {
+  const getScenarioProgress = scenario => {
     let completed = 0;
     scenario.steps.forEach((_, idx) => {
       if (completedSteps[`${scenario.id}-${idx}`]) {
@@ -101,7 +103,7 @@ export default function PoliceGuide() {
     return {
       completed,
       total: scenario.steps.length,
-      percent: (completed / scenario.steps.length) * 100,
+      percent: (completed / scenario.steps.length) * 100
     };
   };
 
@@ -109,10 +111,22 @@ export default function PoliceGuide() {
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="policeguide">
         <div className="police-header-div">
-          <h1 className={isDark ? "dark-mode-text police-header-text" : "police-header-text"}>
+          <h1
+            className={
+              isDark
+                ? "dark-mode-text police-header-text"
+                : "police-header-text"
+            }
+          >
             {title}
           </h1>
-          <p className={isDark ? "dark-mode-text subTitle police-subtitle" : "subTitle police-subtitle"}>
+          <p
+            className={
+              isDark
+                ? "dark-mode-text subTitle police-subtitle"
+                : "subTitle police-subtitle"
+            }
+          >
             {subtitle}
           </p>
         </div>
@@ -120,7 +134,7 @@ export default function PoliceGuide() {
         <div className="police-container-grid">
           {/* Navigation/Sidebar: Scenarios List */}
           <div className="police-sidebar">
-            {scenarios.map((scenario) => {
+            {scenarios.map(scenario => {
               const isActive = scenario.id === selectedScenarioId;
               const progress = getScenarioProgress(scenario);
               const isScenarioBookmarked = bookmarks[scenario.id] !== undefined;
@@ -131,7 +145,9 @@ export default function PoliceGuide() {
                   onClick={() => setSelectedScenarioId(scenario.id)}
                   className={
                     isDark
-                      ? `scenario-btn dark-mode-card ${isActive ? "active" : ""}`
+                      ? `scenario-btn dark-mode-card ${
+                          isActive ? "active" : ""
+                        }`
                       : `scenario-btn ${isActive ? "active" : ""}`
                   }
                 >
@@ -147,13 +163,16 @@ export default function PoliceGuide() {
                     </div>
                   </div>
                   {isScenarioBookmarked && (
-                    <span className="bookmark-indicator" title="Bookmarked step inside">
+                    <span
+                      className="bookmark-indicator"
+                      title="Bookmarked step inside"
+                    >
                       <i className="fas fa-bookmark"></i>
                     </span>
                   )}
                   <div
                     className="scenario-btn-progress-bar"
-                    style={{ width: `${progress.percent}%` }}
+                    style={{width: `${progress.percent}%`}}
                   ></div>
                 </button>
               );
@@ -161,7 +180,11 @@ export default function PoliceGuide() {
           </div>
 
           {/* Interactive Stepper Wizard Panel */}
-          <div className={isDark ? "police-content dark-mode-card" : "police-content"}>
+          <div
+            className={
+              isDark ? "police-content dark-mode-card" : "police-content"
+            }
+          >
             {/* Scenarios Header */}
             <div className="police-content-header">
               <div>
@@ -169,13 +192,27 @@ export default function PoliceGuide() {
                 <p>{currentScenario.description}</p>
               </div>
               <button
-                onClick={() => toggleBookmark(currentScenario.id, activeStepIndex)}
-                className={`bookmark-btn ${bookmarks[currentScenario.id] === activeStepIndex ? "active" : ""}`}
+                onClick={() =>
+                  toggleBookmark(currentScenario.id, activeStepIndex)
+                }
+                className={`bookmark-btn ${
+                  bookmarks[currentScenario.id] === activeStepIndex
+                    ? "active"
+                    : ""
+                }`}
                 title="Bookmark this step"
               >
-                <i className={bookmarks[currentScenario.id] === activeStepIndex ? "fas fa-bookmark" : "far fa-bookmark"}></i>
+                <i
+                  className={
+                    bookmarks[currentScenario.id] === activeStepIndex
+                      ? "fas fa-bookmark"
+                      : "far fa-bookmark"
+                  }
+                ></i>
                 <span>
-                  {bookmarks[currentScenario.id] === activeStepIndex ? "Bookmarked" : "Bookmark Step"}
+                  {bookmarks[currentScenario.id] === activeStepIndex
+                    ? "Bookmarked"
+                    : "Bookmark Step"}
                 </span>
               </button>
             </div>
@@ -184,19 +221,28 @@ export default function PoliceGuide() {
             <div className="stepper-nav">
               {currentScenario.steps.map((step, idx) => {
                 const isStepActive = idx === activeStepIndex;
-                const isStepCompleted = completedSteps[`${currentScenario.id}-${idx}`];
+                const isStepCompleted =
+                  completedSteps[`${currentScenario.id}-${idx}`];
                 const isStepBookmarked = bookmarks[currentScenario.id] === idx;
 
                 return (
                   <button
                     key={idx}
                     onClick={() => setActiveStepIndex(idx)}
-                    className={`stepper-node ${isStepActive ? "active" : ""} ${isStepCompleted ? "completed" : ""} ${isStepBookmarked ? "bookmarked" : ""}`}
+                    className={`stepper-node ${isStepActive ? "active" : ""} ${
+                      isStepCompleted ? "completed" : ""
+                    } ${isStepBookmarked ? "bookmarked" : ""}`}
                   >
                     <span className="node-num">
-                      {isStepCompleted ? <i className="fas fa-check"></i> : idx + 1}
+                      {isStepCompleted ? (
+                        <i className="fas fa-check"></i>
+                      ) : (
+                        idx + 1
+                      )}
                     </span>
-                    <span className="node-title">{step.title.split(". ")[1] || step.title}</span>
+                    <span className="node-title">
+                      {step.title.split(". ")[1] || step.title}
+                    </span>
                   </button>
                 );
               })}
@@ -209,7 +255,9 @@ export default function PoliceGuide() {
 
                 {/* Practical Tips Checklist */}
                 <div className="tips-section">
-                  <h4><i className="fas fa-list-ul"></i> Actionable Checklist</h4>
+                  <h4>
+                    <i className="fas fa-list-ul"></i> Actionable Checklist
+                  </h4>
                   <ul className="checklist">
                     {currentStep.tips.map((tip, index) => {
                       const checkboxId = `${currentScenario.id}-${activeStepIndex}-tip-${index}`;
@@ -254,10 +302,18 @@ export default function PoliceGuide() {
                   </button>
 
                   <button
-                    onClick={() => toggleStepCompleted(currentScenario.id, activeStepIndex)}
-                    className={`complete-btn ${completedSteps[`${currentScenario.id}-${activeStepIndex}`] ? "completed" : ""}`}
+                    onClick={() =>
+                      toggleStepCompleted(currentScenario.id, activeStepIndex)
+                    }
+                    className={`complete-btn ${
+                      completedSteps[`${currentScenario.id}-${activeStepIndex}`]
+                        ? "completed"
+                        : ""
+                    }`}
                   >
-                    {completedSteps[`${currentScenario.id}-${activeStepIndex}`] ? (
+                    {completedSteps[
+                      `${currentScenario.id}-${activeStepIndex}`
+                    ] ? (
                       <>
                         <i className="fas fa-check-double"></i> Mark as Unread
                       </>

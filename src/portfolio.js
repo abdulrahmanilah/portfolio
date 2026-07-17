@@ -48,10 +48,18 @@ const skillsSection = {
   title: "What I do",
   subTitle: "BRIDGING DESIGN THINKING AND SOFTWARE ENGINEERING",
   skills: [
-    emoji("⚡ Develop highly functional full-stack applications with Python, Django, React, and PostgreSQL"),
-    emoji("⚡ Design premium brand identities, luxury packaging, and print media with CMYK/300DPI precision"),
-    emoji("⚡ Direct product photography, food styling, and luxury editorial aesthetic concepts"),
-    emoji("⚡ Integrate cloud services (AWS Textract, S3) and automate data workflows, web scraping, and POS synchronizations")
+    emoji(
+      "⚡ Develop highly functional full-stack applications with Python, Django, React, and PostgreSQL"
+    ),
+    emoji(
+      "⚡ Design premium brand identities, luxury packaging, and print media with CMYK/300DPI precision"
+    ),
+    emoji(
+      "⚡ Direct product photography, food styling, and luxury editorial aesthetic concepts"
+    ),
+    emoji(
+      "⚡ Integrate cloud services (AWS Textract, S3) and automate data workflows, web scraping, and POS synchronizations"
+    )
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -184,16 +192,25 @@ const openSource = {
 const bigProjects = {
   title: "Featured Projects",
   subtitle: "CREATIVE & TECHNICAL SOLUTIONS",
-  
+
   softwareProjects: [
     {
       projectName: "ChopNextDoor",
-      projectDesc: "A hyperlocal food marketplace connecting home cooks with Kano customers. Built using React 19, TypeScript, Django REST Framework, PostgreSQL, Firebase Auth, and AWS S3, featuring a story-based ordering system that replaces manual Instagram DM ordering.",
-      techStack: ["React 19", "TypeScript", "Django REST Framework", "PostgreSQL", "Firebase Auth", "AWS S3"]
+      projectDesc:
+        "A hyperlocal food marketplace connecting home cooks with Kano customers. Built using React 19, TypeScript, Django REST Framework, PostgreSQL, Firebase Auth, and AWS S3, featuring a story-based ordering system that replaces manual Instagram DM ordering.",
+      techStack: [
+        "React 19",
+        "TypeScript",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Firebase Auth",
+        "AWS S3"
+      ]
     },
     {
       projectName: "Banklytik",
-      projectDesc: "A Django financial reconciliation application that accepts PDF bank statements, utilizes AWS Textract for table extraction, and cleanses transaction data. Integrates LLM features for automated financial processing and insights.",
+      projectDesc:
+        "A Django financial reconciliation application that accepts PDF bank statements, utilizes AWS Textract for table extraction, and cleanses transaction data. Integrates LLM features for automated financial processing and insights.",
       techStack: ["Django", "Python", "AWS Textract", "LLMs", "Pandas"],
       footerLink: [
         {
@@ -204,35 +221,46 @@ const bigProjects = {
     },
     {
       projectName: "Bike Dispatch & Delivery Layer",
-      projectDesc: "An SMS-first delivery dispatch platform designed for Kano couriers using keypad phones. Integrates a Django backend with Africa's Talking SMS services, Termii, and the WhatsApp Business API.",
-      techStack: ["Django", "Termii", "Africa's Talking API", "WhatsApp Business API"]
+      projectDesc:
+        "An SMS-first delivery dispatch platform designed for Kano couriers using keypad phones. Integrates a Django backend with Africa's Talking SMS services, Termii, and the WhatsApp Business API.",
+      techStack: [
+        "Django",
+        "Termii",
+        "Africa's Talking API",
+        "WhatsApp Business API"
+      ]
     },
     {
       projectName: "Kano Supermarket POS Sync SaaS",
-      projectDesc: "A retail integration agent syncing legacy QuickBooks desktop POS databases with live online storefronts. Implements a custom Python background daemon and a secure Django backend.",
+      projectDesc:
+        "A retail integration agent syncing legacy QuickBooks desktop POS databases with live online storefronts. Implements a custom Python background daemon and a secure Django backend.",
       techStack: ["Python", "Django", "QuickBooks POS API", "SaaS"]
     },
     {
       projectName: "WhatsApp Inventory & Chatbot Service",
-      projectDesc: "Automated chat bot and commerce system for Instagram-based sellers and local traders. Enables live inventory updates and orders via WhatsApp.",
+      projectDesc:
+        "Automated chat bot and commerce system for Instagram-based sellers and local traders. Enables live inventory updates and orders via WhatsApp.",
       techStack: ["Python", "WhatsApp API", "Chatbot", "Commerce"]
     }
   ],
-  
+
   designProjects: [
     {
       projectName: "Legacy Designs Web & Branding Portfolio",
-      projectDesc: "Editorial branding, typography design, and responsive single-file websites featuring dark-luxury aesthetics, custom SVG illustrations, and high-conversion WhatsApp call-to-actions.",
+      projectDesc:
+        "Editorial branding, typography design, and responsive single-file websites featuring dark-luxury aesthetics, custom SVG illustrations, and high-conversion WhatsApp call-to-actions.",
       techStack: ["Graphic Design", "Branding", "UI/UX", "HTML/CSS"]
     },
     {
       projectName: "Foodies Corner Branding & Creative Direction",
-      projectDesc: "Full visual brand identity, social media graphics, food styling, and packaging direction for a premium food concept.",
+      projectDesc:
+        "Full visual brand identity, social media graphics, food styling, and packaging direction for a premium food concept.",
       techStack: ["Branding", "Food Photography", "Packaging Design"]
     },
     {
       projectName: "Ummiey's Luxury Palace Identity",
-      projectDesc: "Branding materials, print packaging layouts, and luxury aesthetic product positioning for a high-end consumer store.",
+      projectDesc:
+        "Branding materials, print packaging layouts, and luxury aesthetic product positioning for a high-end consumer store.",
       techStack: ["Branding", "Product Styling", "Packaging Concepts"]
     }
   ],
@@ -240,11 +268,17 @@ const bigProjects = {
   businessProjects: [
     {
       projectName: "Snackville Nigeria",
-      projectDesc: "Co-founded a packaged treats and catering business in Kano. Handled product positioning, social-media operations, premium packaging design, and event operations.",
-      techStack: ["E-commerce", "Operations", "Product Positioning", "Marketing"]
+      projectDesc:
+        "Co-founded a packaged treats and catering business in Kano. Handled product positioning, social-media operations, premium packaging design, and event operations.",
+      techStack: [
+        "E-commerce",
+        "Operations",
+        "Product Positioning",
+        "Marketing"
+      ]
     }
   ],
-  
+
   display: true
 };
 
@@ -270,7 +304,8 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  subtitle: "Let's collaborate on software development, graphic design, or branding projects. My inbox is always open.",
+  subtitle:
+    "Let's collaborate on software development, graphic design, or branding projects. My inbox is always open.",
   number: "+234 000 000 0000",
   email_address: "abdulrahmankamilu@gmail.com"
 };

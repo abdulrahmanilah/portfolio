@@ -68,7 +68,7 @@
   border: 4px solid $buttonColor;
   box-shadow: 0 10px 30px rgba(184, 156, 114, 0.25);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  
+
   &:hover {
     transform: scale(1.03);
     box-shadow: 0 15px 40px rgba(184, 156, 114, 0.45);

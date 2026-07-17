@@ -42,7 +42,9 @@ export default function Greeting() {
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
-                    href={require("./resume.pdf").default || require("./resume.pdf")}
+                    href={
+                      require("./resume.pdf").default || require("./resume.pdf")
+                    }
                     download="Resume.pdf"
                     className="download-link-button"
                   >
@@ -58,7 +60,11 @@ export default function Greeting() {
             ) : (
               <img
                 alt="Abdulrahman Kamilu Profile Avatar"
-                src={require("../../assets/images/abdulrahman_avatar.jpg").default || require("../../assets/images/abdulrahman_avatar.jpg")}
+                src={
+                  require("../../assets/images/abdulrahman_avatar.jpg")
+                    .default ||
+                  require("../../assets/images/abdulrahman_avatar.jpg")
+                }
               ></img>
             )}
           </div>

@@ -35,11 +35,18 @@ export default function StartupProject() {
           <p className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
             {project.projectDesc}
           </p>
-          
+
           {project.techStack && (
             <div className="tech-tags-container">
               {project.techStack.map((tech, idx) => (
-                <span key={idx} className={isDark ? "tech-tag tech-tag-dark" : "tech-tag tech-tag-light"}>
+                <span
+                  key={idx}
+                  className={
+                    isDark
+                      ? "tech-tag tech-tag-dark"
+                      : "tech-tag tech-tag-light"
+                  }
+                >
                   {tech}
                 </span>
               ))}
@@ -52,7 +59,9 @@ export default function StartupProject() {
                 return (
                   <span
                     key={idx}
-                    className={isDark ? "dark-mode project-tag-btn" : "project-tag-btn"}
+                    className={
+                      isDark ? "dark-mode project-tag-btn" : "project-tag-btn"
+                    }
                     onClick={() => openUrlInNewTab(link.url)}
                   >
                     {link.name}
@@ -77,41 +86,61 @@ export default function StartupProject() {
                 ? "dark-mode project-subtitle"
                 : "subTitle project-subtitle"
             }
-            style={{ marginBottom: "3rem" }}
+            style={{marginBottom: "3rem"}}
           >
             {bigProjects.subtitle}
           </p>
 
           {/* Software Development Portfolio */}
           <div className="project-category-section">
-            <h2 className={isDark ? "dark-mode category-heading" : "category-heading"}>
-              <i className="fas fa-code icon-spacing"></i> Software Development Portfolio
+            <h2
+              className={
+                isDark ? "dark-mode category-heading" : "category-heading"
+              }
+            >
+              <i className="fas fa-code icon-spacing"></i> Software Development
+              Portfolio
             </h2>
             <div className="projects-container">
-              {bigProjects.softwareProjects.map((project, i) => renderProjectCard(project, i))}
+              {bigProjects.softwareProjects.map((project, i) =>
+                renderProjectCard(project, i)
+              )}
             </div>
           </div>
 
           {/* Graphic Design & Branding Portfolio */}
           <div className="project-category-section">
-            <h2 className={isDark ? "dark-mode category-heading" : "category-heading"}>
-              <i className="fas fa-paint-brush icon-spacing"></i> Graphic Design & Branding
+            <h2
+              className={
+                isDark ? "dark-mode category-heading" : "category-heading"
+              }
+            >
+              <i className="fas fa-paint-brush icon-spacing"></i> Graphic Design
+              & Branding
             </h2>
             <div className="projects-container">
-              {bigProjects.designProjects.map((project, i) => renderProjectCard(project, i))}
+              {bigProjects.designProjects.map((project, i) =>
+                renderProjectCard(project, i)
+              )}
             </div>
           </div>
 
           {/* Brand & Business Projects */}
           <div className="project-category-section">
-            <h2 className={isDark ? "dark-mode category-heading" : "category-heading"}>
-              <i className="fas fa-briefcase icon-spacing"></i> Brand & Business Projects
+            <h2
+              className={
+                isDark ? "dark-mode category-heading" : "category-heading"
+              }
+            >
+              <i className="fas fa-briefcase icon-spacing"></i> Brand & Business
+              Projects
             </h2>
             <div className="projects-container">
-              {bigProjects.businessProjects.map((project, i) => renderProjectCard(project, i))}
+              {bigProjects.businessProjects.map((project, i) =>
+                renderProjectCard(project, i)
+              )}
             </div>
           </div>
-
         </div>
       </div>
     </Fade>
