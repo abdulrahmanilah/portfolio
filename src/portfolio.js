@@ -21,7 +21,7 @@ const illustration = {
 
 const greeting = {
   username: "Abdulrahman Ilah",
-  title: "Hi all, I'm Ilah",
+  title: "Hi all, I'm Abdulrahman",
   subTitle: emoji(
     "A multidisciplinary creative and software developer based in Kano, Nigeria. I uniquely combine design thinking, software engineering, and business insights to build premium solutions that are visually stunning, technically functional, and commercially effective. 🚀"
   ),
@@ -34,7 +34,8 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/abdulrahmanilah",
   linkedin: "https://www.linkedin.com/in/abdulman-ilah-4612b5357",
-  gmail: "abdulrahmankamilu@gmail.com",
+  gmail: "abdulrahmanilah4@gmail.com",
+  instagram: "https://www.instagram.com/abdulrahman_ilah",
   gitlab: "",
   facebook: "",
   medium: "",
@@ -289,11 +290,11 @@ const resumeSection = {
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
+  title: emoji("Contact Me ✉️"),
   subtitle:
     "Let's collaborate on software development, graphic design, or branding projects. My inbox is always open.",
-  number: "+234 000 000 0000",
-  email_address: "abdulrahmankamilu@gmail.com"
+  number: "",
+  email_address: "abdulrahmanilah4@gmail.com"
 };
 
 const twitterDetails = {
