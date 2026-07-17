@@ -56,6 +56,9 @@ const skillsSection = {
       "⚡ Design premium brand identities, luxury packaging, and print media with CMYK/300DPI precision"
     ),
     emoji(
+      "⚡ Craft stunning UI/UX experiences — wireframes, prototypes, design systems, and pixel-perfect interfaces using Figma"
+    ),
+    emoji(
       "⚡ Direct product photography, food styling, and luxury editorial aesthetic concepts"
     ),
     emoji(
@@ -104,8 +107,20 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-aws"
     },
     {
+      skillName: "figma",
+      fontAwesomeClassname: "fab fa-figma"
+    },
+    {
       skillName: "git-alt",
       fontAwesomeClassname: "fab fa-git-alt"
+    },
+    {
+      skillName: "adobe illustrator",
+      fontAwesomeClassname: "fas fa-pen-nib"
+    },
+    {
+      skillName: "adobe photoshop",
+      fontAwesomeClassname: "fas fa-paint-brush"
     }
   ],
   display: true // Set false to hide this section, defaults to true
