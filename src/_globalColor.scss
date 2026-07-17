@@ -1,0 +1,90 @@
+/* Change colors in this file to style to your needs on a global level. 
+Certain colors are used for different and multiply types of elements. 
+For greater control over colors visit each components .scss file. */
+
+// button colors
+$buttonColor: #b89c72;
+$buttonHover: #997e56;
+$topButtonHover: #000;
+
+// text colors light theme
+$titleColor: #1c1c1c;
+$textColor: #2e2e2e;
+$subTitle: #6e6a66;
+$cardSubtitle: #7e7975;
+$talkCardSubTitle: #8e8a85;
+$blogCardTitleColor: #1c1c1c;
+
+// text color dark theme
+$textColorDark: #f5f2eb;
+
+// toggle switch colors
+$toggleCheck: #b89c72;
+$toggleSwitchSliderBG: #ccc;
+
+// githubRepo specific colors
+$githubRepoCardLanguageColorBG: #b89c72;
+$githubRepoCardColor: rgb(142, 138, 133);
+$githubRepoCardRepoCardStatsColor: rgb(158, 154, 149);
+$githubRepoCardRepoNameColor: rgb(28, 28, 28);
+$githubProfileCardLocationTS: #f5f2eb;
+$githubProfileCardBorder: #b89c72;
+
+// light background colors
+$lightBackground1: #fcfbf9;
+$lightBackground2: rgb(255, 255, 255);
+$lightBackground3: #f5f2eb;
+$blogCardContainerColor: #8e8a85;
+// dark background colors
+$darkBackground: #0d1117;
+
+// light theme box shadows
+$lightBoxShadowDark: rgba(184, 156, 114, 0.15);
+$lightBoxShadow: rgba(0, 0, 0, 0.05);
+$lightBoxShadowDarker: rgba(184, 156, 114, 0.25);
+
+// dark theme box shadows
+$darkBoxShadow: #30363d;
+$darkBoxShadow2: #b89c72;
+
+// linear gradients
+$experienceCardBlurredDivLG: linear-gradient(
+  rgba(0, 0, 0, 0.6),
+  rgba(0, 0, 0, 0.3)
+);
+$experienceCardBannerLG: linear-gradient(
+  rgba(0, 0, 0, 0.8),
+  rgba(0, 0, 0, 0.6)
+);
+
+// borders
+$progressBarBackground: rgb(243, 239, 239);
+$lightBorder1: rgba(184, 156, 114, 0.2);
+$educationCardBorder: #b89c72;
+
+// hovers
+$achievementCertificateCardHoverDark: rgba(184, 156, 114, 0.2);
+$blogCardHoverSmallColor: rgba(255, 255, 255, 0.8);
+$headerHoverBG: #fdfcfb;
+$contactDetailHoverTS: #b89c72;
+
+// misc backgrounds
+$progressBarSpanBG: #b89c72;
+$iconBackground: #1c1c1c;
+$appHeaderBG: #0d1117;
+
+// misc colors
+$skillsColor: #b89c72;
+$appLink: #b89c72;
+
+// social media icons
+$faceBook: #3b5998;
+$linkedin: #0e76a8;
+$github: #1c1c1c;
+$gitlab: #fca326;
+$google: #ea4335;
+$twitter: #1da1f2;
+$medium: #1c1c1c;
+$stackoverflow: #f48024;
+$instagram: #c13584;
+$kaggle: #20beff;

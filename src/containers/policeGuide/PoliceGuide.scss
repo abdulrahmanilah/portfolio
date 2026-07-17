@@ -1,0 +1,698 @@
+@import "../../_globalColor";
+
+.main {
+  width: 90%;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.police-header-div {
+  margin-bottom: 30px;
+}
+
+.police-header-text {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: "Google Sans Medium", sans-serif;
+  margin: 0;
+  color: $titleColor;
+
+  &.dark-mode-text {
+    color: $textColorDark;
+  }
+}
+
+.police-subtitle {
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $subTitle;
+
+  &.dark-mode-text {
+    color: $textColorDark;
+  }
+}
+
+/* Container Layout */
+.police-container-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Sidebar Scenario Buttons */
+.police-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.scenario-btn {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid $lightBorder1;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 4px 12px $lightBoxShadow;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  font-family: inherit;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: rgba($skillsColor, 0.3);
+  }
+
+  &.active {
+    border-color: $skillsColor;
+    background: lighten($skillsColor, 34%);
+    box-shadow: 0 8px 20px rgba($skillsColor, 0.15);
+  }
+
+  &.dark-mode-card {
+    background: lighten($darkBackground, 3%);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: $textColorDark;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      border-color: rgba($buttonHover, 0.4);
+    }
+
+    &.active {
+      background: lighten($darkBackground, 8%);
+      border-color: $buttonHover;
+      box-shadow: 0 8px 20px rgba($buttonHover, 0.25);
+    }
+  }
+
+  .scenario-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .scenario-icon-wrapper {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba($skillsColor, 0.1);
+    color: $skillsColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  &.active .scenario-icon-wrapper {
+    background: $skillsColor;
+    color: #fff;
+  }
+
+  &.dark-mode-card.active .scenario-icon-wrapper {
+    background: $buttonHover;
+    color: #fff;
+  }
+
+  .scenario-btn-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scenario-btn-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .scenario-btn-sub {
+    font-size: 12px;
+    color: $subTitle;
+    margin-top: 3px;
+  }
+
+  .bookmark-indicator {
+    color: #ff9f0a;
+    font-size: 16px;
+  }
+
+  .scenario-btn-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #28a745;
+    transition: width 0.3s ease;
+  }
+}
+
+/* Stepper Wizard Content Panel */
+.police-content {
+  background: #ffffff;
+  border: 1px solid $lightBorder1;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px $lightBoxShadow;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+
+  &.dark-mode-card {
+    background: lighten($darkBackground, 3%);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: $textColorDark;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Wizard Header */
+.police-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  p {
+    margin: 6px 0 0 0;
+    font-size: 14px;
+    color: $subTitle;
+  }
+
+  .bookmark-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &.active {
+      background: rgba(255, 159, 10, 0.1);
+      border-color: #ff9f0a;
+      color: #ff9f0a;
+    }
+  }
+
+  &.dark-mode-card .bookmark-btn {
+    border-color: rgba(255, 255, 255, 0.15);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+      background: rgba(255, 159, 10, 0.15);
+      border-color: #ff9f0a;
+    }
+  }
+}
+
+/* Stepper Nodes Navigation */
+.stepper-nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  padding: 0 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.08);
+    z-index: 1;
+  }
+
+  .stepper-node {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+
+    .node-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .node-title {
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: $subTitle;
+      transition: all 0.3s ease;
+      max-width: 90px;
+      text-align: center;
+    }
+
+    /* Stepper States */
+    &.active {
+      .node-num {
+        border-color: $skillsColor;
+        background: $skillsColor;
+        color: #fff;
+        box-shadow: 0 0 0 4px rgba($skillsColor, 0.15);
+      }
+      .node-title {
+        color: $skillsColor;
+        font-weight: 700;
+      }
+    }
+
+    &.completed {
+      .node-num {
+        border-color: #28a745;
+        background: #28a745;
+        color: #fff;
+      }
+    }
+
+    &.bookmarked:not(.active):not(.completed) {
+      .node-num {
+        border-color: #ff9f0a;
+        color: #ff9f0a;
+      }
+    }
+  }
+}
+
+.dark-mode-card {
+  .stepper-nav {
+    &::before {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .stepper-node {
+      .node-num {
+        background: lighten($darkBackground, 3%);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      &.active {
+        .node-num {
+          border-color: $buttonHover;
+          background: $buttonHover;
+          box-shadow: 0 0 0 4px rgba($buttonHover, 0.25);
+        }
+        .node-title {
+          color: $textColorDark;
+        }
+      }
+      &.completed {
+        .node-num {
+          border-color: #28a745;
+          background: #28a745;
+        }
+      }
+    }
+  }
+}
+
+/* Step Panel Details */
+.step-panel {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.step-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+/* Actionable Checklist Section */
+.tips-section {
+  margin-bottom: 25px;
+
+  h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $skillsColor;
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .checklist-item {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
+.dark-mode-card .tips-section h4 {
+  color: $buttonHover;
+}
+
+/* Custom Checkbox Design */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #eee;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 8px;
+      top: 4px;
+      width: 6px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2.5px 2.5px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: #28a745;
+
+    &::after {
+      display: block;
+    }
+  }
+
+  .tip-text {
+    display: inline-block;
+    transition: all 0.2s ease;
+  }
+
+  input:checked ~ .tip-text {
+    color: $subTitle;
+    text-decoration: line-through;
+  }
+}
+
+.dark-mode-card .checkbox-container {
+  .checkmark {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &:hover input ~ .checkmark {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Rights Warning Alert Box */
+.rights-alert-box {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 15px;
+  background: rgba(230, 43, 30, 0.06);
+  border-left: 4px solid #e62b1e;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  align-items: start;
+
+  .rights-alert-icon {
+    font-size: 24px;
+    color: #e62b1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(230, 43, 30, 0.1);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  .rights-alert-text {
+    h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #e62b1e;
+      margin: 0 0 5px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+}
+
+/* Step Footer & Action buttons */
+.step-footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+
+  .nav-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: inherit;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover:not(:disabled) {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  .complete-btn {
+    background: $buttonColor;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba($buttonColor, 0.2);
+
+    &:hover {
+      background: $buttonHover;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba($buttonColor, 0.3);
+    }
+
+    &.completed {
+      background: rgba(40, 167, 69, 0.1);
+      color: #28a745;
+      border: 1px solid rgba(40, 167, 69, 0.3);
+      box-shadow: none;
+
+      &:hover {
+        background: rgba(40, 167, 69, 0.2);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.dark-mode-card {
+  .step-footer {
+    border-top-color: rgba(255, 255, 255, 0.05);
+
+    .nav-btn {
+      border-color: rgba(255, 255, 255, 0.1);
+
+      &:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    .complete-btn {
+      background: $buttonHover;
+      box-shadow: 0 4px 10px rgba($buttonHover, 0.2);
+
+      &:hover {
+        background: lighten($buttonHover, 5%);
+        box-shadow: 0 6px 12px rgba($buttonHover, 0.3);
+      }
+
+      &.completed {
+        background: rgba(40, 167, 69, 0.15);
+        color: #28a745;
+        border-color: rgba(40, 167, 69, 0.3);
+        box-shadow: none;
+
+        &:hover {
+          background: rgba(40, 167, 69, 0.25);
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1380px) {
+  .police-header-text {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .police-container-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .police-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .scenario-btn {
+    flex: 1 1 200px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: 95%;
+  }
+
+  .police-header-text {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .police-subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .stepper-nav {
+    overflow-x: auto;
+    padding-bottom: 10px;
+    gap: 15px;
+
+    &::before {
+      display: none;
+    }
+
+    .stepper-node {
+      flex-shrink: 0;
+    }
+  }
+
+  .police-content {
+    padding: 20px;
+  }
+
+  .step-footer {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+
+    .complete-btn {
+      order: -1;
+      text-align: center;
+    }
+
+    .nav-btn {
+      justify-content: center;
+    }
+  }
+}
