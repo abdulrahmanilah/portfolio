@@ -1,47 +1,57 @@
 @import "../../_globalColor";
 
+/* ── Button: Primary gold CTA ──────────────────────────────── */
 .main-button {
-  background-color: $buttonColor;
-  border: solid 1px $buttonColor;
-  color: $textColorDark;
-  font-weight: 700;
-  width: max-content;
-  padding: 13px 22px;
-  margin-right: 50px;
-  text-transform: uppercase;
-  border-radius: 6px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  margin-top: 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out 0s;
-}
-.main-button:hover {
-  background-color: $darkBoxShadow2;
-  color: $buttonColor;
-  transition: all 0.3s ease 0s;
-  transform: translateY(-3px);
-}
-.project-button {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  gap: 8px;
+  padding: 13px 28px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
-.project-button > .main-button {
-  margin-right: 0 !important;
+
+/* Primary variant */
+.main-button:first-of-type,
+.main-button[href="#projects"],
+.main-button[href="#contact"] {
+  background: #c9a96e;
+  color: #0a0a08;
+  border-color: #c9a96e;
 }
-/* Media Query */
-@media (max-width: 768px) {
-  .main-button {
-    font-size: 0.938rem;
-    padding: 12px 18px;
-    margin-right: 0px;
-  }
+
+.main-button:hover {
+  background: #a07840;
+  border-color: #a07840;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.25);
 }
-@media (max-width: 320px) {
-  .main-button {
-    font-size: 0.75rem;
-  }
+
+.main-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Download / secondary variant */
+.download-link-button .main-button {
+  background: transparent;
+  color: #f0ece4;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.download-link-button .main-button:hover {
+  border-color: rgba(201, 169, 110, 0.5);
+  color: #c9a96e;
+  background: rgba(201, 169, 110, 0.06);
+  box-shadow: none;
 }
