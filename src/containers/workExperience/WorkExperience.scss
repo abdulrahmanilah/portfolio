@@ -1,188 +1,37 @@
-@import "../../_globalColor";
-
-/* ═══════════════════════════════════════════════════
-   WORK EXPERIENCE — Editorial Dark Design System
-   ═══════════════════════════════════════════════════ */
-
-.experience-div {
-  padding: 96px clamp(24px, 6vw, 96px);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ── Section heading ──────────────────────────── */
-.experience-heading {
-  margin-bottom: 56px;
-}
-
-.experience-heading h1 {
-  font-family: "Archivo", sans-serif;
-  font-weight: 800;
-  font-size: clamp(36px, 5vw, 56px);
-  letter-spacing: -0.03em;
-  color: #f0ece4;
-  margin-bottom: 12px;
-}
-
-/* ── Experience card ──────────────────────────── */
 .experience-cards-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem 1rem;
+}
+
+.experience-heading {
+  font-size: 56px;
+  font-weight: 400;
+}
+
+.experience-container {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 2rem;
 }
 
-.experience-card {
-  background: #111110;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-left: 2px solid rgba(201, 169, 110, 0.25);
-  border-radius: 0 12px 12px 0;
-  padding: 32px 32px 32px 28px;
-  transition: border-left-color 300ms ease, box-shadow 300ms ease;
-  position: relative;
-}
-
-.experience-card::before {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: 28px;
-  width: 8px;
-  height: 8px;
-  background: rgba(201, 169, 110, 0.3);
-  border-radius: 50%;
-  transition: background 300ms ease;
-}
-
-.experience-card:hover {
-  border-left-color: #c9a96e;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.experience-card:hover::before {
-  background: #c9a96e;
-}
-
-/* ── Card header ──────────────────────────────── */
-.experience-card-heading-div {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-/* Company logo */
-.experience-card-logo-div {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #1a1a18;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  flex-shrink: 0;
-}
-
-.experience-card-logo-div img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.experience-heading-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.experience-container > * {
   flex: 1;
 }
 
-.experience-heading-content {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
+/* Media Query */
 
-/* Role title */
-.experience-card-title {
-  font-family: "Archivo", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #f0ece4;
-  letter-spacing: -0.01em;
-  margin: 0;
-}
-
-/* Company name */
-.experience-card-company {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #c9a96e;
-}
-
-/* Date range */
-.experience-card-date {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
-  color: #4a4642;
-  white-space: nowrap;
-}
-
-/* ── Description ──────────────────────────────── */
-.experience-card-description {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #6a6662;
-  margin-bottom: 16px;
-}
-
-/* ── Bullets ──────────────────────────────────── */
-.experience-card-details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.experience-card-details li {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 13px;
-  color: #5a5652;
-  line-height: 1.65;
-  padding-left: 20px;
-  position: relative;
-}
-
-.experience-card-details li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  color: #c9a96e;
-  font-weight: 600;
-}
-
-/* ── Responsive ───────────────────────────────── */
-@media (max-width: 600px) {
-  .experience-div {
-    padding: 64px 20px;
+@media (max-width: 1380px) {
+  .experience-heading {
+    font-size: 40px;
   }
+}
 
-  .experience-card {
-    padding: 24px 20px 24px 20px;
-    border-left-width: 2px;
-    border-radius: 0 8px 8px 0;
-  }
-
-  .experience-card-heading-div {
-    flex-direction: column;
-  }
-
-  .experience-card-date {
-    order: -1;
+@media (max-width: 768px) {
+  .experience-heading {
+    font-size: 30px;
+    text-align: center;
   }
 }

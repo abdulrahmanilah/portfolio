@@ -1,166 +1,64 @@
 @import "../../_globalColor";
 
-/* ── Skills Section ────────────────────────────────────────── */
 .skills-main-div {
+  display: flex;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 96px clamp(24px, 6vw, 96px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  overflow: hidden;
 }
 
-/* ── Section label ─────────────────────────────────────────── */
-.skills-heading {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #c9a96e;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.skills-heading::before {
-  content: "";
-  width: 24px;
-  height: 1px;
-  background: #c9a96e;
-}
-
-/* ── Title ─────────────────────────────────────────────────── */
-.skills-heading-text-div h1 {
-  font-family: "Archivo", sans-serif;
-  font-weight: 800;
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: #f0ece4;
-  margin-bottom: 20px;
-}
-
-.skills-heading-text-div .subTitle {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #8a8680;
-  margin-bottom: 32px;
-}
-
-/* ── Skill bullet list ─────────────────────────────────────── */
 .skills-text-div {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  margin-left: 50px;
 }
 
-.skills-text {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #8a8680;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
+.skills-main-div > * {
+  flex: 1;
+  margin-bottom: 30px;
 }
 
-/* ── Skill icons grid ──────────────────────────────────────── */
-.skills-image-div {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+.skills-image-div > img {
+  max-width: 100%;
+  height: auto;
 }
 
-.dev-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 0;
-  list-style: none;
+.skills-heading {
+  font-size: 56px;
+  font-weight: 400;
+}
+.subTitle {
+  color: $subTitle;
 }
 
-/* ── Individual icon chip ──────────────────────────────────── */
-.software-skill-inline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 10px;
-  padding: 12px 14px;
-  transition: border-color 280ms ease, background 280ms ease,
-    transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: default;
-  min-width: 64px;
+/* Media Query */
+@media (max-width: 1380px) {
+  .skills-heading {
+    font-size: 40px;
+  }
 }
-
-.software-skill-inline:hover {
-  border-color: rgba(201, 169, 110, 0.35);
-  background: rgba(201, 169, 110, 0.06);
-  transform: translateY(-2px);
-}
-
-.software-skill-inline i {
-  font-size: 24px;
-  color: #8a8680;
-  transition: color 250ms ease;
-}
-
-.software-skill-inline:hover i {
-  color: #c9a96e;
-}
-
-.software-skill-inline p {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  color: #4a4642;
-  text-align: center;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: color 250ms ease;
-  margin: 0;
-}
-
-.software-skill-inline:hover p {
-  color: #8a8680;
-}
-
-/* ── Dark mode ─────────────────────────────────────────────── */
-.dark-mode .skills-heading-text-div h1 {
-  color: #f0ece4;
-}
-
-/* ── Responsive ────────────────────────────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+  .greeting-text-p {
+    font-size: 16px;
+    line-height: normal;
+  }
   .skills-main-div {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 64px clamp(20px, 5vw, 48px);
+    flex-direction: column;
   }
-
+  .skills-text-div {
+    margin-left: 0px;
+    margin: 20px;
+  }
+  .skills-text {
+    font-size: 16px;
+  }
+  .skills-text-subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
   .skills-image-div {
-    order: -1;
-  }
-}
-
-@media (max-width: 480px) {
-  .dev-icons {
-    gap: 10px;
-  }
-
-  .software-skill-inline {
-    min-width: 56px;
-    padding: 10px 12px;
-  }
-
-  .software-skill-inline i {
-    font-size: 20px;
+    /* display: none; */
+    order: 2;
   }
 }

@@ -1,258 +1,86 @@
 @import "../../_globalColor";
 
-/* ── Hero Section ──────────────────────────────────────────── */
-
+.main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 4rem;
+}
 .greet-main {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 0 clamp(24px, 6vw, 96px);
-  position: relative;
-  overflow: hidden;
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 2rem;
 }
 
-/* Ambient gradient blob — top-right */
-.greet-main::before {
-  content: "";
-  position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 520px;
-  height: 520px;
-  background: radial-gradient(
-    ellipse,
-    rgba(201, 169, 110, 0.07) 0%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  pointer-events: none;
-  animation: blobDrift 12s ease-in-out infinite alternate;
-}
-
-/* Ambient gradient blob — bottom-left */
-.greet-main::after {
-  content: "";
-  position: absolute;
-  bottom: -15%;
-  left: -8%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    ellipse,
-    rgba(201, 169, 110, 0.05) 0%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  pointer-events: none;
-  animation: blobDrift 16s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes blobDrift {
-  from {
-    transform: translate(0, 0) scale(1);
-  }
-  to {
-    transform: translate(30px, 20px) scale(1.08);
-  }
-}
-
-/* ── Inner layout ──────────────────────────────────────────── */
 .greeting-main {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 64px;
-}
-
-/* ── Text side ─────────────────────────────────────────────── */
-.greeting-text-div {
   display: flex;
-  flex-direction: column;
-  gap: 0;
 }
 
-/* Eyebrow tag above name */
-.greeting-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #c9a96e;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(12px);
-  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+.subTitle {
+  color: $subTitle !important;
 }
 
-.greeting-eyebrow::before {
-  content: "";
-  width: 24px;
-  height: 1px;
-  background: #c9a96e;
-  display: block;
+.greeting-main {
+  display: flex;
 }
 
-/* Main headline */
-.greeting-text {
-  font-family: "Archivo", sans-serif !important;
-  font-weight: 800 !important;
-  font-size: clamp(52px, 7vw, 96px) !important;
-  line-height: 1.02 !important;
-  letter-spacing: -0.03em !important;
-  color: #f0ece4 !important;
-  margin-bottom: 24px;
-  opacity: 0;
-  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+.greeting-main > * {
+  flex: 1;
+  margin-bottom: 30px;
 }
 
-/* Gold accent on "Abdulrahman" */
-.greeting-text .name-accent {
-  background: linear-gradient(135deg, #c9a96e 0%, #e8c88a 50%, #a07840 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.dark-mode.greeting-text {
-  color: #f0ece4 !important;
-}
-
-/* Subtitle / tagline */
-.greeting-text-p {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(15px, 2vw, 18px) !important;
-  line-height: 1.7 !important;
-  color: #8a8680;
-  max-width: 520px;
-  margin-bottom: 36px;
-  opacity: 0;
-  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
-}
-
-.dark-mode.greeting-text-p {
-  color: #8a8680;
-}
-
-/* ── Social + Buttons row ──────────────────────────────────── */
 .empty-div {
-  display: none;
+  margin-bottom: 40px;
 }
 
 .button-greeting-div {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-  opacity: 0;
-  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+  margin-top: 40px;
 }
-
 .download-link-button {
   text-decoration: none;
 }
 
-/* ── Image side ────────────────────────────────────────────── */
+.greeting-text {
+  font-size: 70px;
+  line-height: 1.1;
+  color: $textColor !important;
+}
+
+.greeting-text-p {
+  font-size: 30px;
+  line-height: 40px;
+}
+
 .greeting-image-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  animation: fadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
 }
-
 .greeting-image-div > img {
-  width: clamp(220px, 22vw, 320px);
-  height: clamp(220px, 22vw, 320px);
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid rgba(201, 169, 110, 0.4);
-  box-shadow: 0 0 0 8px rgba(201, 169, 110, 0.06),
-    0 24px 64px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.35s ease, box-shadow 0.35s ease,
-    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: default;
+  border: 4px solid $buttonColor;
+  box-shadow: 0 10px 30px rgba(184, 156, 114, 0.25);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(184, 156, 114, 0.45);
+  }
 }
 
-.greeting-image-div > img:hover {
-  border-color: rgba(201, 169, 110, 0.7);
-  box-shadow: 0 0 0 12px rgba(201, 169, 110, 0.08),
-    0 32px 80px rgba(0, 0, 0, 0.6);
-  transform: scale(1.02);
-}
-
-/* ── Wave emoji ────────────────────────────────────────────── */
 .wave-emoji {
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
   animation-name: wave;
   display: inline-block;
   transform-origin: 70% 70%;
-}
-
-/* ── Scroll indicator ─────────────────────────────────────── */
-.scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  opacity: 0;
-  animation: fadeIn 1s ease 1.2s forwards;
-}
-
-.scroll-indicator span {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #4a4642;
-}
-
-.scroll-indicator::after {
-  content: "";
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, #4a4642, transparent);
-  animation: scrollLine 1.5s ease-in-out infinite;
-}
-
-@keyframes scrollLine {
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-  50% {
-    opacity: 1;
-    transform: scaleY(1.2);
-  }
-}
-
-/* ── Keyframes ─────────────────────────────────────────────── */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes wave {
@@ -279,44 +107,38 @@
   }
 }
 
-/* ── Responsive ────────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .greeting-main {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 48px;
+/* Media Query */
+@media (max-width: 1380px) {
+  .greeting-text {
+    font-size: 50px;
   }
-
-  .greeting-image-div {
-    order: -1;
-  }
-
-  .greeting-eyebrow {
-    justify-content: center;
-  }
-
   .greeting-text-p {
-    margin: 0 auto 36px;
+    font-size: 20px;
   }
-
+}
+@media (max-width: 768px) {
   .button-greeting-div {
-    justify-content: center;
+    justify-content: space-around;
   }
-
-  .scroll-indicator {
-    display: none;
+  .greeting-text {
+    font-size: 30px;
+    text-align: center;
+  }
+  .greeting-text-p {
+    font-size: 16px;
+    line-height: normal;
+    text-align: center;
+  }
+  .greeting-main {
+    display: block;
+  }
+  .greeting-image-div {
+    height: 256px;
   }
 }
 
-@media (max-width: 480px) {
-  .greet-main {
-    padding: 80px 20px 48px;
-    min-height: auto;
-  }
-
-  .button-greeting-div {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
+@media (max-width: 320px) {
+  .main {
+    width: auto;
   }
 }
